@@ -24,10 +24,7 @@ public class SecurityConfig {
                 .authorizeRequests().
                 requestMatchers("/**").permitAll()
                 .anyRequest()
-                .authenticated()
-                .and()
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-
+                .authenticated();
         return http.build();
     }
 
